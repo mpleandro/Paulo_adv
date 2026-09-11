@@ -75,6 +75,8 @@
   if (reduceMotion || !('IntersectionObserver' in window)) {
     targets.forEach(function (el) { el.classList.add('is-visible'); });
   } else {
+    document.documentElement.classList.add('js-reveal');
+
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;

@@ -736,14 +736,16 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
 .footer-legal a:hover { color: var(--gold-500); }
 
 /* ---------- 15. Revelação ---------- */
-[data-reveal] {
+/* o estado oculto só vale depois que o JS assume; sem script,
+   ou antes dele carregar, o conteúdo já aparece */
+.js-reveal [data-reveal] {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity .7s var(--ease), transform .7s var(--ease);
 }
-[data-reveal].is-visible { opacity: 1; transform: none; }
+.js-reveal [data-reveal].is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .js-reveal [data-reveal] { opacity: 1; transform: none; transition: none; }
   .btn, .modules li { transition: none; }
 }
 
