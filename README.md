@@ -26,19 +26,25 @@ assets/img/           # fotos da página (ver abaixo)
 
 ## Imagens
 
-As quatro fotos do layout não acompanham o repositório. Coloque os arquivos abaixo
-em `assets/img/` e eles entram automaticamente:
+As quatro fotos ficam em `assets/img/`:
 
-| Arquivo                 | Conteúdo                            | Observação                                   |
-| ----------------------- | ----------------------------------- | -------------------------------------------- |
-| `paulo-hero.png`        | Paulo de braços cruzados            | **PNG com fundo recortado** (aparece sobre a citação) |
-| `paulo-professor.png`   | Paulo sentado, retrato da seção     | Pode ser JPG/PNG com fundo                    |
-| `colunas.png`           | Colunas do fórum                    | Fundo da seção "Para quem é"                  |
-| `justica.png`           | Estátua da Justiça                  | Fundo da chamada final                        |
+| Arquivo                 | Onde aparece                        |
+| ----------------------- | ----------------------------------- |
+| `paulo-hero.png`        | Hero, Paulo de braços cruzados      |
+| `paulo-professor.png`   | Seção "Com quem você vai aprender"  |
+| `colunas.png`           | Fundo de "Para quem é"              |
+| `justica.png`           | Fundo da chamada final              |
 
-Enquanto os arquivos não existirem, a página exibe um marcador discreto no lugar —
-nada quebra. Para usar outro nome ou extensão, ajuste o `src` no `index.html` e a
-lista `placeholders` em `assets/js/main.js`.
+**Os dois retratos precisam ter fundo preto.** Eles não são recortes com
+transparência: o CSS usa `mix-blend-mode: lighten`, que apaga o preto contra o azul
+da seção e preserva as cores do rosto e da gravata. O resultado é o mesmo de um
+recorte, sem editar a imagem — mas só funciona enquanto o fundo for preto. Se
+trocar por uma foto de fundo claro, remova o `mix-blend-mode` das regras
+`.hero-photo` e `.teacher-photo`.
+
+Trocando qualquer arquivo, mantenha o nome. Se precisar de outro nome ou extensão,
+ajuste o `src` no `index.html` e a lista `placeholders` em `assets/js/main.js`.
+Faltando um arquivo, a página mostra um marcador discreto no lugar — nada quebra.
 
 ## Formulário
 

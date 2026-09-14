@@ -320,6 +320,9 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
 }
+/* a foto tem fundo preto chapado, não é recorte: o blend "lighten" apaga
+   esse preto contra o azul do hero e preserva as cores do rosto e da gravata */
+.hero-photo { mix-blend-mode: lighten; }
 .hero-photo img { object-position: center 12%; }
 /* o retrato real é um recorte PNG; sem ele, o placeholder fica discreto
    para não encobrir a citação posicionada atrás dele */
@@ -506,8 +509,15 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
     radial-gradient(70% 80% at 76% 30%, rgba(27, 58, 92, .7), transparent 60%),
     linear-gradient(120deg, #0a1c31, #071626);
 }
-/* sem foto, o slot deixa passar o degradê da própria seção */
-.teacher-photo { min-height: 440px; background: none; }
+/* o slot deixa passar o degradê da própria seção; com a foto (também de
+   fundo preto), o blend e o esmaecimento à direita dissolvem a borda dura */
+.teacher-photo {
+  min-height: 440px;
+  background: none;
+  mix-blend-mode: lighten;
+  -webkit-mask-image: linear-gradient(to right, #000 58%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 58%, transparent 100%);
+}
 .teacher-photo.portrait--empty::before { content: none; }
 .teacher-photo img { object-position: 50% 26%; }
 
@@ -795,7 +805,11 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   }
 
   .teacher { grid-template-columns: 1fr; }
-  .teacher-photo { min-height: 380px; }
+  .teacher-photo {
+    min-height: 380px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+  }
   .teacher-body { max-width: none; }
 
   .audience-media { width: 44%; }
