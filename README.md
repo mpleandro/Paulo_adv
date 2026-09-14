@@ -36,11 +36,19 @@ As quatro fotos ficam em `assets/img/`:
 | `justica.png`           | Fundo da chamada final              |
 
 **Os dois retratos precisam ter fundo preto.** Eles não são recortes com
-transparência: o CSS usa `mix-blend-mode: lighten`, que apaga o preto contra o azul
-da seção e preserva as cores do rosto e da gravata. O resultado é o mesmo de um
-recorte, sem editar a imagem — mas só funciona enquanto o fundo for preto. Se
-trocar por uma foto de fundo claro, remova o `mix-blend-mode` das regras
-`.hero-photo` e `.teacher-photo`.
+transparência. Em vez disso, o degradê de cada seção escurece até `#000` na área da
+foto, e a imagem esmaece as bordas dentro desse preto — o retângulo desaparece sem
+editar a imagem e sem alterar as cores do rosto e da gravata.
+
+São duas peças que trabalham juntas, uma de cada lado da borda:
+
+- **Hero** — `.hero-photo::before` cria um poço de preto maior que a imagem, que
+  some no azul; a máscara em `.hero-photo img` chega a zero exatamente na borda.
+- **Professor** — o `linear-gradient` de `.teacher::before` é preto na coluna da
+  foto e abre para o azul à direita; `.teacher-photo img` esmaece na saída.
+
+Trocando por uma foto de fundo claro, esse efeito não se aplica: aí o caminho é um
+PNG recortado, e as máscaras podem ser removidas.
 
 Trocando qualquer arquivo, mantenha o nome. Se precisar de outro nome ou extensão,
 ajuste o `src` no `index.html` e a lista `placeholders` em `assets/js/main.js`.
