@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DE FACTO — master logo, transparent background. All artwork is vector. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="2000" viewBox="0 0 2000 2000" role="img" aria-labelledby="title desc">
+  <title id="title">DE FACTO — Formação Prática em Advocacia</title>
+  <desc id="desc">Logo com escudo azul-marinho, wordmark DE FACTO em azul-marinho e cinza, e subtítulo.</desc>
+  <defs>
+    <style>
+      .navy { fill: #001743; }
+      .gray { fill: #3e3e3e; }
+      .rule { fill: #3e3e3e; }
+      .wordmark { font-family: 'Bodoni Moda', Didot, 'Bodoni 72', serif; font-weight: 400; }
+      .tagline { font-family: Montserrat, 'Avenir Next', Avenir, sans-serif; font-weight: 400; }
+    </style>
+  </defs>
+
+  <!-- Shield and monogram -->
+  <g class="navy" transform="translate(189 485) scale(.432)" aria-label="Monograma DE FACTO em escudo">
+    <!-- Contorno do escudo: laterais verticais, base curva e ponta central -->
+    <path fill="none" stroke="#001743" stroke-width="50" stroke-linejoin="miter" d="M70 82H670V515C670 625 620 682 535 732L375 824L210 732C120 682 70 625 70 515Z"/>
+    <!-- Travessa superior do monograma -->
+    <path d="M177 189H573V227Q573 246 553 246H197Q177 246 177 227Z"/>
+    <!-- Haste central e fecho diagonal inferior -->
+    <path d="M352 276H405L400 778L540 695L566 718L390 846Q375 856 352 845Z"/>
+    <!-- Haste esquerda, com terminal diagonal integrado à ponta -->
+    <path d="M191 301H307V812L260 784V363Q260 344 241 344H187Q187 301 191 301Z"/>
+    <!-- Haste direita e corte diagonal característico -->
+    <path d="M442 301H525Q555 301 555 332V345H510Q491 345 491 363V657L442 688Z"/>
+  </g>
+
+  <!-- Main lockup -->
+  <text x="551" y="708" class="navy wordmark" font-size="286" letter-spacing="-11">DE</text>
+  <text x="1012" y="708" class="gray wordmark" font-size="286" letter-spacing="-10">FACTO</text>
+  <rect class="rule" x="522" y="734" width="1410" height="9"/>
+  <text x="545" y="833" class="navy tagline" font-size="56" letter-spacing="10">FORMAÇÃO PRÁTICA EM ADVOCACIA</text>
+</svg>
