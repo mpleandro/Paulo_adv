@@ -293,7 +293,7 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   background:
     radial-gradient(78% 68% at 18% 26%, rgba(27, 58, 92, .85), transparent 62%),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, .022) 0 1px, transparent 1px 76px),
-    linear-gradient(105deg, #0e2740 0%, #0a1c31 42%, #05121f 74%, #000 100%);
+    linear-gradient(150deg, #0e2740 0%, #0a1c31 48%, #071626 100%);
 }
 .hero-bg::after {
   content: "";
@@ -309,10 +309,6 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
 .hero-copy .lead--sm { color: rgba(255, 255, 255, .66); }
 .hero-copy .btn { margin-top: 40px; }
 
-/* A foto é um retângulo de fundo preto, não um recorte. Em vez de blend,
-   um poço de preto ancorado atrás dela (::before, maior que a imagem)
-   escurece o fundo da seção até #000 e some no azul; a imagem esmaece as
-   bordas dentro desse preto, então não sobra emenda. */
 .hero-photo {
   position: absolute;
   right: max(9vw, calc((100vw - var(--shell)) / 2 + 90px));
@@ -321,27 +317,9 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   width: min(38vw, 430px);
   height: min(66vh, 560px);
   background: none;
-  overflow: visible;           /* o poço de preto ultrapassa a imagem */
 }
-.hero-photo::before {
-  content: "";
-  position: absolute;
-  inset: -22% -30% -10%;
-  z-index: 0;
-  background: radial-gradient(50% 52% at 50% 54%,
-    #000 0 58%, rgba(0, 0, 0, .45) 80%, rgba(0, 0, 0, 0) 100%);
-}
-.hero-photo img {
-  position: relative;
-  z-index: 1;
-  object-position: center 12%;
-  /* chega a zero exatamente na borda da imagem: é isso que apaga o retângulo.
-     O miolo opaco (76%) cobre o Paulo inteiro; só a moldura preta esmaece. */
-  -webkit-mask-image: radial-gradient(50% 56% at 50% 44%,
-    #000 0 76%, rgba(0, 0, 0, .45) 90%, transparent 100%);
-  mask-image: radial-gradient(50% 56% at 50% 44%,
-    #000 0 76%, rgba(0, 0, 0, .45) 90%, transparent 100%);
-}
+/* a foto entra sem tratamento: o fundo preto dela aparece como está */
+.hero-photo img { object-position: center 12%; }
 .hero-photo.portrait--empty::before { opacity: .55; }
 .hero-photo.portrait--empty::after { bottom: 96px; }
 
@@ -513,22 +491,17 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   color: #fff;
   isolation: isolate;
 }
-/* degradê da seção: preto na coluna da foto, abrindo para o azul à direita */
 .teacher::before {
   content: "";
   position: absolute; inset: 0; z-index: -1;
   background:
-    radial-gradient(70% 80% at 78% 32%, rgba(27, 58, 92, .7), transparent 60%),
-    linear-gradient(to right, #000 0 34%, #04101b 44%, #0a1c31 64%, #071626 100%);
+    radial-gradient(70% 80% at 76% 30%, rgba(27, 58, 92, .7), transparent 60%),
+    linear-gradient(120deg, #0a1c31, #071626);
 }
-/* a foto tem o mesmo preto atrás dela: basta esmaecer a borda de saída */
+/* sem foto, o slot deixa passar o degradê da própria seção */
 .teacher-photo { min-height: 440px; background: none; }
 .teacher-photo.portrait--empty::before { content: none; }
-.teacher-photo img {
-  object-position: 50% 26%;
-  -webkit-mask-image: linear-gradient(to right, #000 0 46%, rgba(0, 0, 0, .7) 74%, transparent 100%);
-  mask-image: linear-gradient(to right, #000 0 46%, rgba(0, 0, 0, .7) 74%, transparent 100%);
-}
+.teacher-photo img { object-position: 50% 26%; }
 
 .teacher-body {
   display: grid;
@@ -814,16 +787,7 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   }
 
   .teacher { grid-template-columns: 1fr; }
-  .teacher::before {
-    background:
-      radial-gradient(90% 50% at 50% 74%, rgba(27, 58, 92, .7), transparent 62%),
-      linear-gradient(to bottom, #000 0 22%, #04101b 34%, #0a1c31 58%, #071626 100%);
-  }
   .teacher-photo { min-height: 380px; }
-  .teacher-photo img {
-    -webkit-mask-image: linear-gradient(to bottom, #000 0 52%, rgba(0, 0, 0, .7) 78%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0 52%, rgba(0, 0, 0, .7) 78%, transparent 100%);
-  }
   .teacher-body { max-width: none; }
 
   .audience-media { width: 44%; }

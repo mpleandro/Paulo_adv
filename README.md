@@ -35,20 +35,14 @@ As quatro fotos ficam em `assets/img/`:
 | `colunas.png`           | Fundo de "Para quem é"              |
 | `justica.png`           | Fundo da chamada final              |
 
-**Os dois retratos precisam ter fundo preto.** Eles não são recortes com
-transparência. Em vez disso, o degradê de cada seção escurece até `#000` na área da
-foto, e a imagem esmaece as bordas dentro desse preto — o retângulo desaparece sem
-editar a imagem e sem alterar as cores do rosto e da gravata.
+As imagens entram **sem nenhum tratamento pelo CSS** — nada de máscara, blend ou
+esmaecimento. O que estiver no arquivo é o que aparece, inclusive o fundo. O fundo
+de cada seção continua sendo o degradê azul, independente da foto.
 
-São duas peças que trabalham juntas, uma de cada lado da borda:
-
-- **Hero** — `.hero-photo::before` cria um poço de preto maior que a imagem, que
-  some no azul; a máscara em `.hero-photo img` chega a zero exatamente na borda.
-- **Professor** — o `linear-gradient` de `.teacher::before` é preto na coluna da
-  foto e abre para o azul à direita; `.teacher-photo img` esmaece na saída.
-
-Trocando por uma foto de fundo claro, esse efeito não se aplica: aí o caminho é um
-PNG recortado, e as máscaras podem ser removidas.
+Ou seja, o recorte é responsabilidade da imagem: para o retrato do hero flutuar
+sobre o azul, como no layout, exporte um **PNG com fundo transparente**. Enquanto o
+arquivo tiver fundo preto, ele aparece como um retângulo preto — que é o
+comportamento esperado aqui.
 
 Trocando qualquer arquivo, mantenha o nome. Se precisar de outro nome ou extensão,
 ajuste o `src` no `index.html` e a lista `placeholders` em `assets/js/main.js`.
