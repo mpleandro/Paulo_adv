@@ -14,7 +14,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Mrs+Saint+Delafield&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a1c31'/%3E%3Cg fill='%23c8ab83'%3E%3Crect x='6' y='8' width='20' height='2.4'/%3E%3Crect x='8' y='12' width='2.6' height='11'/%3E%3Crect x='14.7' y='12' width='2.6' height='11'/%3E%3Crect x='21.4' y='12' width='2.6' height='11'/%3E%3Crect x='6' y='24' width='20' height='2.4'/%3E%3C/g%3E%3C/svg%3E">
 </head>
@@ -22,15 +22,6 @@
 
 <!-- ============ SVG SPRITE ============ -->
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-logo" viewBox="0 0 44 44">
-    <g fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M4 12h36" stroke-width="2.2"/>
-      <path d="M22 3.5 4 12h36L22 3.5Z" stroke-linejoin="round"/>
-      <path d="M10 15v18M16 15v18M22 15v18M28 15v18M34 15v18"/>
-      <path d="M4 36h36" stroke-width="2.2"/>
-      <path d="M2 40h40" stroke-width="1.4"/>
-    </g>
-  </symbol>
   <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>
   </symbol>
@@ -87,11 +78,19 @@
 <header class="site-header" id="topo">
   <div class="shell header-inner">
     <a class="brand" href="#topo" aria-label="De Facto — Formação prática em advocacia">
-      <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"></use></svg>
-      <span class="brand-text">
-        <strong>DE FACTO</strong>
-        <small>Formação prática<br>em advocacia</small>
-      </span>
+      <svg class="brand-logo" viewBox="200 498 1745 375" role="img" aria-label="De Facto — Formação Prática em Advocacia">
+        <g transform="translate(189 485) scale(.432)">
+          <path class="lg-stroke" fill="none" stroke-width="50" stroke-linejoin="miter" d="M70 82H670V515C670 625 620 682 535 732L375 824L210 732C120 682 70 625 70 515Z"/>
+          <path class="lg-navy" d="M177 189H573V227Q573 246 553 246H197Q177 246 177 227Z"/>
+          <path class="lg-navy" d="M352 276H405L400 778L540 695L566 718L390 846Q375 856 352 845Z"/>
+          <path class="lg-navy" d="M191 301H307V812L260 784V363Q260 344 241 344H187Q187 301 191 301Z"/>
+          <path class="lg-navy" d="M442 301H525Q555 301 555 332V345H510Q491 345 491 363V657L442 688Z"/>
+        </g>
+        <text class="lg-navy lg-word" x="551" y="708" font-size="286" letter-spacing="-11" textLength="420" lengthAdjust="spacingAndGlyphs">DE</text>
+        <text class="lg-gray lg-word" x="1012" y="708" font-size="286" letter-spacing="-10" textLength="920" lengthAdjust="spacingAndGlyphs">FACTO</text>
+        <rect class="lg-gray" x="522" y="734" width="1410" height="9"/>
+        <text class="lg-navy lg-tag" x="545" y="833" font-size="56" letter-spacing="10" textLength="1290" lengthAdjust="spacingAndGlyphs">FORMAÇÃO PRÁTICA EM ADVOCACIA</text>
+      </svg>
     </a>
 
     <nav class="nav" id="nav-principal" aria-label="Navegação principal">
@@ -343,11 +342,19 @@
 <footer class="site-footer">
   <div class="shell footer-inner">
     <a class="brand brand--footer" href="#topo" aria-label="De Facto — Formação prática em advocacia">
-      <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"></use></svg>
-      <span class="brand-text">
-        <strong>DE FACTO</strong>
-        <small>Formação prática<br>em advocacia</small>
-      </span>
+      <svg class="brand-logo" viewBox="200 498 1745 375" role="img" aria-label="De Facto — Formação Prática em Advocacia">
+        <g transform="translate(189 485) scale(.432)">
+          <path class="lg-stroke" fill="none" stroke-width="50" stroke-linejoin="miter" d="M70 82H670V515C670 625 620 682 535 732L375 824L210 732C120 682 70 625 70 515Z"/>
+          <path class="lg-navy" d="M177 189H573V227Q573 246 553 246H197Q177 246 177 227Z"/>
+          <path class="lg-navy" d="M352 276H405L400 778L540 695L566 718L390 846Q375 856 352 845Z"/>
+          <path class="lg-navy" d="M191 301H307V812L260 784V363Q260 344 241 344H187Q187 301 191 301Z"/>
+          <path class="lg-navy" d="M442 301H525Q555 301 555 332V345H510Q491 345 491 363V657L442 688Z"/>
+        </g>
+        <text class="lg-navy lg-word" x="551" y="708" font-size="286" letter-spacing="-11" textLength="420" lengthAdjust="spacingAndGlyphs">DE</text>
+        <text class="lg-gray lg-word" x="1012" y="708" font-size="286" letter-spacing="-10" textLength="920" lengthAdjust="spacingAndGlyphs">FACTO</text>
+        <rect class="lg-gray" x="522" y="734" width="1410" height="9"/>
+        <text class="lg-navy lg-tag" x="545" y="833" font-size="56" letter-spacing="10" textLength="1290" lengthAdjust="spacingAndGlyphs">FORMAÇÃO PRÁTICA EM ADVOCACIA</text>
+      </svg>
     </a>
 
     <p class="footer-tagline">Mais que conhecimento.<br>Prática para<br>a sua realidade.</p>

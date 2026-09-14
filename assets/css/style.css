@@ -35,6 +35,9 @@
   --pad: 24px;
   --radius: 4px;
   --ease: cubic-bezier(.22, .61, .36, 1);
+
+  /* cinza do "FACTO" no logo, clareado para ter contraste sobre o azul-escuro */
+  --logo-gray: #9fa6ae;
 }
 
 /* ---------- 2. Reset ---------- */
@@ -198,25 +201,15 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   min-height: 64px;
 }
 
-.brand { display: inline-flex; align-items: center; gap: 13px; color: #fff; }
-.brand-mark { width: 34px; height: 34px; color: var(--gold-500); flex: none; }
-.brand-text strong {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 500;
-  letter-spacing: .09em;
-  line-height: 1;
-}
-.brand-text small {
-  display: block;
-  margin-top: 5px;
-  font-size: 8px;
-  letter-spacing: .19em;
-  text-transform: uppercase;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, .62);
-}
+.brand { display: inline-flex; align-items: center; color: #fff; }
+/* Logo oficial (assets/img/defacto-logo.svg) embutido para poder recolorir:
+   o que é azul-marinho no arquivo vira branco; "FACTO" e o filete seguem cinza. */
+.brand-logo { height: 46px; width: auto; display: block; }
+.lg-navy { fill: #fff; }
+.lg-stroke { stroke: #fff; }
+.lg-gray { fill: var(--logo-gray); }
+.lg-word { font-family: "Bodoni Moda", "Playfair Display", Didot, Georgia, serif; font-weight: 400; }
+.lg-tag { font-family: "Montserrat", var(--font-sans); font-weight: 400; }
 
 .nav { display: flex; align-items: center; gap: 32px; }
 .nav > a {
@@ -705,8 +698,7 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   padding-block: 34px;
   border-top: 1px solid rgba(255, 255, 255, .08);
 }
-.brand--footer .brand-mark { width: 42px; height: 42px; }
-.brand--footer .brand-text strong { font-size: 1.6rem; }
+.brand--footer .brand-logo { height: 58px; }
 .footer-tagline {
   padding-left: clamp(24px, 4vw, 52px);
   border-left: 1px solid rgba(255, 255, 255, .14);
@@ -858,8 +850,7 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   .factbar { gap: 16px 28px; }
   .factbar li { flex: 1 1 132px; }
   .btn { width: 100%; padding-inline: 22px; }
-  .brand-mark { width: 30px; height: 30px; }
-  .brand-text strong { font-size: 1.15rem; }
+  .brand-logo { height: 36px; }
   .card { padding: 26px 20px 28px; }
   .quote { padding-left: 24px; }
   /* só no celular a seção do professor passa a uma coluna; a altura é
