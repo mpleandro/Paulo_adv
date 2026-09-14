@@ -206,10 +206,12 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
    o que é azul-marinho no arquivo vira branco; "FACTO" e o filete seguem cinza. */
 .brand-logo { height: 46px; width: auto; display: block; }
 .lg-navy { fill: #fff; }
-.lg-stroke { stroke: #fff; }
+.lg-stroke { fill: none; stroke: #fff; }
 .lg-gray { fill: var(--logo-gray); }
-.lg-word { font-family: "Bodoni Moda", "Playfair Display", Didot, Georgia, serif; font-weight: 400; }
-.lg-tag { font-family: "Montserrat", var(--font-sans); font-weight: 400; }
+/* o arquivo pede Didot e Helvetica (fontes de sistema): Bodoni Moda entra
+   na frente para o wordmark sair igual fora do macOS */
+.lg-word { font-family: "Bodoni Moda", Didot, "Bodoni 72", Georgia, serif; font-weight: 400; }
+.lg-tag { font-family: Helvetica, Arial, var(--font-sans); font-weight: 400; }
 
 .nav { display: flex; align-items: center; gap: 32px; }
 .nav > a {
