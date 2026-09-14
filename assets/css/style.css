@@ -786,8 +786,8 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
     font-weight: 600;
   }
 
-  .teacher { grid-template-columns: 1fr; }
-  .teacher-photo { min-height: 380px; }
+  /* no tablet a seção segue em 2 colunas: empilhada, a foto fica grande demais */
+  .teacher { grid-template-columns: minmax(0, 36%) minmax(0, 64%); }
   .teacher-body { max-width: none; }
 
   .audience-media { width: 44%; }
@@ -862,6 +862,10 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   .brand-text strong { font-size: 1.15rem; }
   .card { padding: 26px 20px 28px; }
   .quote { padding-left: 24px; }
+  /* só no celular a seção do professor passa a uma coluna; a altura é
+     limitada para a foto não esticar na proporção natural do arquivo */
+  .teacher { grid-template-columns: 1fr; }
+  .teacher-photo { min-height: 0; height: clamp(360px, 125vw, 520px); }
   .footer-legal { flex-direction: column; align-items: flex-start; }
 }
 
