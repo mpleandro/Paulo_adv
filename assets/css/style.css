@@ -333,13 +333,14 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
 
 .hero-quote {
   position: absolute;
-  z-index: 0;
+  z-index: 3;            /* à frente do retrato */
   max-width: 46vw;
   right: max(1.5vw, calc((100vw - var(--shell)) / 2 - 90px));
   top: 168px;
   text-align: right;
   color: var(--gold-500);
-  opacity: .55;
+  /* mantém a leitura quando cruza a foto */
+  text-shadow: 0 2px 20px rgba(7, 22, 38, .9), 0 1px 4px rgba(7, 22, 38, .7);
 }
 .hero-quote p {
   font-family: var(--font-serif);
@@ -355,6 +356,7 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 18px 54px;
   padding: 26px 0 40px;
   border-top: 1px solid rgba(255, 255, 255, .1);
@@ -369,7 +371,7 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   color: rgba(255, 255, 255, .6);
 }
 .factbar b { display: block; font-weight: 600; color: #fff; }
-.factbar--flat { border-top: 0; padding: 0; gap: 18px 46px; margin-bottom: 44px; }
+.factbar--flat { justify-content: flex-start; border-top: 0; padding: 0; gap: 18px 46px; margin-bottom: 44px; }
 
 /* ---------- 8. Oferta ---------- */
 .offer {
@@ -504,7 +506,9 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
     radial-gradient(70% 80% at 76% 30%, rgba(27, 58, 92, .7), transparent 60%),
     linear-gradient(120deg, #0a1c31, #071626);
 }
-.teacher-photo { min-height: 440px; }
+/* sem foto, o slot deixa passar o degradê da própria seção */
+.teacher-photo { min-height: 440px; background: none; }
+.teacher-photo.portrait--empty::before { content: none; }
 .teacher-photo img { object-position: 50% 26%; }
 
 .teacher-body {
@@ -752,7 +756,6 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
 /* ---------- 16. Responsivo ---------- */
 @media (max-width: 1180px) {
   .modules { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .hero-quote { display: none; }
   .hero-photo { right: 4vw; width: min(40vw, 380px); }
 }
 
@@ -824,7 +827,18 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
     height: 340px;
     margin: 0 auto -20px;
   }
-  .hero > .shell:last-of-type { order: 3; }
+  .hero-quote {
+    order: 2;
+    position: static;
+    right: auto; top: auto;
+    max-width: none;
+    padding-bottom: 4px;
+    text-align: center;
+    text-shadow: none;
+  }
+  .hero-quote .rule { margin-inline: auto; }
+  .hero-photo { order: 3; }
+  .hero > .shell:last-of-type { order: 4; }
   .hero-copy { max-width: none; padding-bottom: 24px; }
 
   .audience-media {
@@ -856,7 +870,6 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
   .brand-text strong { font-size: 1.15rem; }
   .card { padding: 26px 20px 28px; }
   .quote { padding-left: 24px; }
-  .hero-quote { display: none; }
   .footer-legal { flex-direction: column; align-items: flex-start; }
 }
 
