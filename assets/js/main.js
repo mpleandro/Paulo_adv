@@ -14,10 +14,10 @@
 
   /* ---------- Placeholder de imagens ausentes ---------- */
   var placeholders = {
-    'paulo-hero.png': 'foto do professor',
-    'paulo-professor.png': 'foto do professor',
-    'colunas.png': 'colunas do fórum',
-    'justica.png': 'estátua da justiça'
+    'paulo-hero.jpg': 'foto do professor',
+    'paulo-professor.jpg': 'foto do professor',
+    'colunas.jpg': 'colunas do fórum',
+    'justica.jpg': 'estátua da justiça'
   };
 
   document.querySelectorAll('[data-portrait] img').forEach(function (img) {

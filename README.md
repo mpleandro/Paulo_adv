@@ -30,10 +30,10 @@ As quatro fotos ficam em `assets/img/`:
 
 | Arquivo                 | Onde aparece                        |
 | ----------------------- | ----------------------------------- |
-| `paulo-hero.png`        | Hero, Paulo de braços cruzados      |
-| `paulo-professor.png`   | Seção "Com quem você vai aprender"  |
-| `colunas.png`           | Fundo de "Para quem é"              |
-| `justica.png`           | Fundo da chamada final              |
+| `paulo-hero.jpg`        | Hero, Paulo de braços cruzados      |
+| `paulo-professor.jpg`   | Seção "Com quem você vai aprender"  |
+| `colunas.jpg`           | Fundo de "Para quem é"              |
+| `justica.jpg`           | Fundo da chamada final              |
 | `defacto-logo.svg`      | Logo, no cabeçalho e no rodapé      |
 
 O logo está **em curvas** e é embutido no HTML, e não referenciado por `<img>`,
