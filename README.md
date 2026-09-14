@@ -34,8 +34,15 @@ As quatro fotos ficam em `assets/img/`:
 | `paulo-professor.png`   | Seção "Com quem você vai aprender"  |
 | `colunas.png`           | Fundo de "Para quem é"              |
 | `justica.png`           | Fundo da chamada final              |
+| `defacto-logo.svg`      | Logo, no cabeçalho e no rodapé      |
 
-As imagens entram **sem nenhum tratamento pelo CSS** — nada de máscara, blend ou
+O logo está **em curvas** e é embutido no HTML, e não referenciado por `<img>`,
+para o CSS poder recolori-lo: o que é azul-marinho no arquivo (`.lg-navy` e
+`.lg-stroke`) vira branco, e "FACTO" e o filete (`.lg-gray`) saem da variável
+`--logo-gray`. Para trocar o logo, substitua o arquivo e reconverta as cores em
+classes — nenhuma cor literal deve ficar no `index.html`.
+
+As fotos entram **sem nenhum tratamento pelo CSS** — nada de máscara, blend ou
 esmaecimento. O que estiver no arquivo é o que aparece, inclusive o fundo. O fundo
 de cada seção continua sendo o degradê azul, independente da foto.
 

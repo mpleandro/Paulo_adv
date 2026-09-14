@@ -208,10 +208,6 @@ h1 em, h2 em { font-style: normal; color: var(--gold-500); }
 .lg-navy { fill: #fff; }
 .lg-stroke { fill: none; stroke: #fff; }
 .lg-gray { fill: var(--logo-gray); }
-/* o arquivo pede Didot e Helvetica (fontes de sistema): Bodoni Moda entra
-   na frente para o wordmark sair igual fora do macOS */
-.lg-word { font-family: "Bodoni Moda", Didot, "Bodoni 72", Georgia, serif; font-weight: 400; }
-.lg-tag { font-family: Helvetica, Arial, var(--font-sans); font-weight: 400; }
 
 .nav { display: flex; align-items: center; gap: 32px; }
 .nav > a {
